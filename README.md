@@ -1,5 +1,5 @@
 # PlayWrightAutomation by Suman Jayaprakash
-# Test Automation Framework using Playwright
+## Test Automation Framework using Playwright
 
 Playwright POM Framework - Login Functionality Tests
 ## Overview
