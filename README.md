@@ -35,3 +35,44 @@ To execute the tests, run the following command:
 5.To Launch HTML report
 `npx playwright show-report`
 
+# Continuous Integration
+Playwright tests can be executed in CI environments. We have created sample configurations for common CI providers.
+
+3 steps to get your tests running on CI:
+
+Ensure CI agent can run browsers: Use our Docker image in Linux agents or install your dependencies using the CLI.
+
+Install Playwright:
+
+# Install NPM packages
+npm ci
+
+# Install Playwright browsers and dependencies
+npx playwright install --with-deps
+
+Run your tests:
+
+npx playwright test
+
+## Azure Pipelines
+For running the Playwright tests use this pipeline yml file :
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '18'
+  displayName: 'Install Node.js'
+- script: npm ci
+  displayName: 'npm ci'
+- script: npx playwright install --with-deps
+  displayName: 'Install Playwright browsers'
+- script: npx playwright test
+  displayName: 'Run Playwright tests'
+  env:
+    CI: 'true'
