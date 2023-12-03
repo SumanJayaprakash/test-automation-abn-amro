@@ -19,7 +19,7 @@ npm install
 ## Set up your configuration:
 Open the playwright.config.ts file and update the URL of your web application.
 Application URL:
-file://C:/Users/Gebruiker/TEST-AUTOMATION-ABN-AMRO/test-automation-abn-amro/src/index.html
+file://TEST-AUTOMATION-ABN-AMRO/test-automation-abn-amro/src/index.html
 
 ## Running Tests and Generating the report
 To execute the tests, run the following command:
