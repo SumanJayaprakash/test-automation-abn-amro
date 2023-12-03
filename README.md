@@ -5,7 +5,7 @@ Playwright POM Framework - Login Functionality Tests
 ## Overview
 This repository contains automated tests for the login functionality of a web application using the Playwright Page Object Model (POM) framework. The framework is designed to provide a structured and maintainable way to create and manage Playwright tests.
 
-# Prerequisites
+## Prerequisites
 Make sure you have the following installed on your machine:
 
 Node.js (https://nodejs.org/)
