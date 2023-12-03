@@ -22,6 +22,16 @@ export default class LoginPage {
         await this.page.getByRole('button', { name: 'LOGIN' }).click();
     }
 
+    async clickShowUser() {
+        //await this.page.click(selectors.LoginPage.loginButton);
+        await this.page.locator('i').nth(3).click();
+      }
+      
+      async clickLogOutButon() {
+        //await this.page.click(selectors.LoginPage.loginButton);
+       // await this.page.locator('#logout i').click();
+        await this.page.getByText('Sign Out').click();
+      }
     //get getErrorMessage() {
     //    return this.page.locator(selectors.LoginPage.errorMessage).textContent();
     //}

@@ -1,5 +1,5 @@
 # PlayWrightAutomation by Suman Jayaprakash
-## Test Automation Framework using Playwright
+# Test Automation Framework using Playwright
 
 Playwright POM Framework - Login Functionality Tests
 ## Overview
@@ -13,7 +13,7 @@ Playwright (https://playwright.dev/)
 
 Getting Started
 ## Clone this repository to your local machine:
-git clone https://github.com/SumanJayaprakash/playwright-pom-login.git
+git clone https://github.com/SumanJayaprakash/test-automation-abn-amro.git
 ## Navigate to the project directory:
 cd playwright-pom-login
 ## Install dependencies:

@@ -17,66 +17,65 @@ test.describe("Login Feature @login", async () => {
         //await page.goto(`${baseURL}`);
     })
 
-    test("Positive: Admin user tries to login with correct credentials.", async ({ page }) => {
+    test("TC01:Positive: Admin user tries to login with correct credentials.", async ({ page }) => {
 
         await loginPage.enterUsername(users.admin.username);
         await loginPage.enterPassword(users.admin.password);
 
         await loginPage.clickLoginButon();
-
-        //await page.getByText('Home').click();
-        //await page.getByText('Products').click();
-        //await page.getByText('Contact').click();
-        //await page.locator('#content').click();
+        //Assertions
         await expect(page.getByText('Home')).toHaveText('Home')
     });
 
-    test("Positive: Dev user tries to login with correct credentials.", async ({ page }) => {
+    test("TC02:Positive: Dev user tries to login with correct credentials.", async ({ page }) => {
 
         await loginPage.enterUsername(users.Dev.username);
         await loginPage.enterPassword(users.Dev.password);
 
         await loginPage.clickLoginButon();
-
+         //Assertions
         await expect(page.getByText('Home')).toHaveText('Home')
     });
 
-    test("Positive: Simple user tries to login with correct credentials.", async ({ page }) => {
+    test("Tc03:Positive: Simple user tries to login with correct credentials.", async ({ page }) => {
 
         await loginPage.enterUsername(users.Simple.username);
         await loginPage.enterPassword(users.Simple.password);
 
         await loginPage.clickLoginButon();
-
+         //Assertions
         await expect(page.getByText('Home')).toHaveText('Home')
     });
-    test("Negative: User tries to login without credentials.", async ({ page }) => {
+    test("TC04:Negative: User tries to login without credentials.", async ({ page }) => {
 
         await loginPage.enterUsername("");
         await loginPage.enterPassword("");
 
         await loginPage.clickLoginButon();
+         //Assertions
         expect(page.getByRole('heading', { name: 'Automation doesn\'t stop at testing, it\'s just a beginning!' }))
 
         
     });
 
-    test("Negative: User tries to login without password.", async ({ page }) => {
+    test("Tc05:Negative: User tries to login without password.", async ({ page }) => {
 
         await loginPage.enterUsername(users.admin.username);
         await loginPage.enterPassword("");
 
         await loginPage.clickLoginButon();
+         //Assertions
         expect(page.getByRole('heading', { name: 'Automation doesn\'t stop at testing, it\'s just a beginning!' }))
 
     });
 
-    test("Negative: User tries to login without username.", async ({ page }) => {
+    test("TC06:Negative: User tries to login without username.", async ({ page }) => {
 
         await loginPage.enterUsername("");
         await loginPage.enterPassword(users.admin.password);
 
         await loginPage.clickLoginButon();
+         //Assertions
         expect(page.getByRole('heading', { name: 'Automation doesn\'t stop at testing, it\'s just a beginning!' }))
     });
 })
